@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entspannungseinheiten – Zum Vorlesen</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f0ede8;
+      --card:      #faf9f7;
+      --ink:       #1e1c1a;
+      --mid:       #6b6560;
+      --accent:    #3d6b5e;
+      --accent2:   #8b4f2e;
+      --rule:      #d5d0c8;
+      --tag-bg:    #e6ede9;
+      --tag-text:  #2d5246;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      padding: 2rem 1rem 5rem;
+    }
+
+    header {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.5rem;
+    }
+
+    header .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--mid);
+      max-width: 520px;
+    }
+
+    .unit {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      background: var(--card);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    }
+
+    .unit-header {
+      padding: 1.5rem 2rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .unit-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.2rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    .tag.accent2 {
+      background: #f0e6df;
+      color: #7a3d1e;
+    }
+
+    .unit-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .unit-header .duration {
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    .unit-body {
+      padding: 1.75rem 2rem;
+    }
+
+    /* Vorlese-Text: bewusst großzügig gesetzt */
+    .read-aloud {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 2;
+      color: var(--ink);
+    }
+
+    .read-aloud p {
+      margin-bottom: 1.4em;
+    }
+
+    .read-aloud p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Pausen-Markierung */
+    .pause {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--tag-bg);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin: 0 0.25rem;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 1.5rem 0;
+    }
+
+    .hint {
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 0.85rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--mid);
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media (max-width: 520px) {
+      .unit-header, .unit-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .unit { transition: box-shadow 0.2s ease; }
+      .unit:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Entspannungseinheiten · Zum Vorlesen</div>
+  <h1>Zwei geführte<br><em>Körper&shy;entspannungen</em></h1>
+  <p>Für Kursleiter:innen – beide Texte eignen sich zum direkten Vorlesen, ohne Vorbereitung. Kein Traumreise-Format.</p>
+</header>
+
+
+<!-- ===================== EINHEIT 1 ===================== -->
+<div class="unit">
+  <div class="unit-header">
+    <div class="unit-meta">
+      <span class="tag">Einheit 1</span>
+      <span class="tag">Body Scan · Muskelentspannung</span>
+      <span class="tag accent2">ca. 10–12 Min.</span>
+    </div>
+    <h2>Körper ablegen –<br>Military Sleep Method</h2>
+    <div class="duration">Progressive Muskelentspannung nach Jacobson · angepasst für Schmerzpatienten</div>
+  </div>
+  <div class="unit-body">
+    <div class="read-aloud">
+
+      <p>Nehmen Sie eine bequeme Position ein. Legen Sie sich hin, wenn möglich – oder lehnen Sie sich vollständig zurück. Schließen Sie die Augen, wenn das für Sie angenehm ist. Wenn nicht, lassen Sie den Blick einfach weich nach unten fallen.</p>
+
+      <p>Es gibt jetzt nichts, das Sie tun müssen. Nichts, das fertig werden muss. Dieser Moment gehört allein Ihrem Körper.</p>
+
+      <hr class="divider" />
+
+      <p>Wir beginnen mit Ihrem Gesicht. <span class="pause">Pause · 3 Sek.</span> Spüren Sie die Stirn. Ist dort Spannung? Lassen Sie sie los – nicht mit Kraft, sondern indem Sie einfach aufhören, sie zu halten. <span class="pause">Pause · 4 Sek.</span></p>
+
+      <p>Die Augen. Die Muskeln rund um die Augen – sie dürfen jetzt ganz schwer werden. Wie zwei kleine Gewichte, die sinken. <span class="pause">Pause · 4 Sek.</span></p>
+
+      <p>Der Kiefer. Viele Menschen halten dort ohne es zu merken die gesamte Anspannung des Tages. Lassen Sie den Unterkiefer ein kleines Stück sinken – die Zähne dürfen sich leicht trennen. Die Zunge liegt locker im Mund. <span class="pause">Pause · 5 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Jetzt die Schultern. Stellen Sie sich vor, jemand nimmt Ihnen gerade etwas aus den Händen, das Sie lange getragen haben. Die Schultern fallen – nicht nach vorne, einfach nach unten. <span class="pause">Pause · 5 Sek.</span></p>
+
+      <p>Der rechte Arm. Beginnen Sie beim Oberarm – spüren Sie, wie schwer er auf der Unterlage liegt. Dann der Unterarm. Dann die Hand, die Finger. <span class="pause">Pause · 5 Sek.</span> Wenn irgendwo noch eine Anspannung zu spüren ist – das ist in Ordnung. Sie müssen sie nicht wegdrücken. Nur beobachten. <span class="pause">Pause · 4 Sek.</span></p>
+
+      <p>Der linke Arm. Oberarm – Unterarm – Hand – Finger. <span class="pause">Pause · 6 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Der Brustkorb. Atmen Sie einmal tief durch die Nase ein <span class="pause">Pause · 3 Sek.</span> – und lassen Sie die Luft langsam, ohne Druck, durch leicht geöffnete Lippen wieder heraus. <span class="pause">Pause · 5 Sek.</span> Der Brustkorb weitet sich beim Einatmen – und sinkt beim Ausatmen ein kleines Stück tiefer in die Unterlage. <span class="pause">Pause · 5 Sek.</span></p>
+
+      <p>Der Bauch. Manche Menschen halten den Bauch unbewusst die ganze Zeit leicht eingezogen. Erlauben Sie ihm jetzt, vollständig loszulassen. <span class="pause">Pause · 5 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Jetzt die Beine. Der rechte Oberschenkel – er liegt schwer. Der Unterschenkel. Der Fuß – Ferse, Fußballen, Zehen. <span class="pause">Pause · 6 Sek.</span></p>
+
+      <p>Der linke Oberschenkel. Der Unterschenkel. Der Fuß. <span class="pause">Pause · 6 Sek.</span></p>
+
+      <p>Wenn Sie jetzt Ihren Körper als Ganzes wahrnehmen: Er liegt da. Er trägt gerade nichts. Er darf einfach sein. <span class="pause">Pause · 8 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Bleiben Sie noch einen Moment hier. Kein nächster Schritt. Kein Ziel. <span class="pause">Pause · 10 Sek.</span></p>
+
+      <p>Wenn Sie bereit sind, bewegen Sie langsam die Finger und Zehen. Atmen Sie einmal tief durch. Und kommen Sie in Ihrem eigenen Tempo zurück.</p>
+
+    </div>
+    <p class="hint">Hinweis für Kursleitung: Pausen ruhig etwas länger halten als es sich anfühlt – Schmerzpatienten brauchen mehr Zeit, um körperliche Anspannung wahrzunehmen. Das <em>Beobachten ohne Korrigieren</em> ist bei chronischem Schmerz besonders wichtig.</p>
+  </div>
+</div>
+
+
+<!-- ===================== EINHEIT 2 ===================== -->
+<div class="unit">
+  <div class="unit-header">
+    <div class="unit-meta">
+      <span class="tag">Einheit 2</span>
+      <span class="tag">Atemführung · kognitiver Anker</span>
+      <span class="tag accent2">ca. 8–10 Min.</span>
+    </div>
+    <h2>Atem als Anker –<br>4-7-8 mit Rückkehrtechnik</h2>
+    <div class="duration">Parasympathikus-Aktivierung · geeignet auch bei starker innerer Unruhe</div>
+  </div>
+  <div class="unit-body">
+    <div class="read-aloud">
+
+      <p>Setzen oder legen Sie sich bequem hin. Die Hände ruhen irgendwo, wo es sich natürlich anfühlt – auf dem Bauch, auf den Oberschenkeln, neben dem Körper. Schließen Sie die Augen, oder senken Sie den Blick.</p>
+
+      <p>Bevor wir beginnen: Es ist vollkommen normal, wenn Ihre Gedanken gleich abschweifen. Das ist keine Störung – das ist, was Gedanken tun. Wir haben eine einfache Technik, um sie zurückzuholen. Immer wieder, so oft wie nötig.</p>
+
+      <hr class="divider" />
+
+      <p>Wir beginnen mit einer normalen Ausatmung. Atmen Sie einfach das aus, was gerade in Ihrer Lunge ist – vollständig, ohne Druck. <span class="pause">Pause · 5 Sek.</span></p>
+
+      <p>Jetzt der erste Atemzug nach unserem Rhythmus. Atmen Sie durch die Nase ein – <em>eins, zwei, drei, vier.</em> <span class="pause">Pause · 4 Sek. Einatmen</span></p>
+
+      <p>Anhalten – <em>eins, zwei, drei, vier, fünf, sechs, sieben.</em> <span class="pause">Pause · 7 Sek. Halten</span></p>
+
+      <p>Und ausatmen durch den leicht geöffneten Mund – lang und gleichmäßig – <em>eins, zwei, drei, vier, fünf, sechs, sieben, acht.</em> <span class="pause">Pause · 8 Sek. Ausatmen</span></p>
+
+      <p>Gut. Noch einmal, in Ihrem eigenen Tempo: <span class="pause">Pause · 3 Sek.</span> Einatmen – vier Zählungen. <span class="pause">Pause · 4 Sek.</span> Halten – sieben. <span class="pause">Pause · 7 Sek.</span> Ausatmen – acht. <span class="pause">Pause · 8 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Ab jetzt dürfen Sie die Zählungen loslassen – ich führe Sie. Atmen Sie einfach mit.</p>
+
+      <p>Einatmen… <span class="pause">Pause · 4 Sek.</span> Halten… <span class="pause">Pause · 7 Sek.</span> Ausatmen… <span class="pause">Pause · 8 Sek.</span></p>
+
+      <p>Einatmen… <span class="pause">Pause · 4 Sek.</span> Halten… <span class="pause">Pause · 7 Sek.</span> Ausatmen… <span class="pause">Pause · 8 Sek.</span></p>
+
+      <p>Einatmen… <span class="pause">Pause · 4 Sek.</span> Halten… <span class="pause">Pause · 7 Sek.</span> Ausatmen… <span class="pause">Pause · 8 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Wenn jetzt Gedanken aufgetaucht sind – Erinnerungen, Sorgen, To-dos – ist das in Ordnung. Benennen Sie den Gedanken kurz, ganz im Stillen: „Planung". „Schmerz". „Gestern". Was auch immer es ist. <span class="pause">Pause · 4 Sek.</span></p>
+
+      <p>Und kehren Sie zurück. Zum Atem. Zur nächsten Einatmung.</p>
+
+      <p>Einatmen… <span class="pause">Pause · 4 Sek.</span> Halten… <span class="pause">Pause · 7 Sek.</span> Ausatmen… <span class="pause">Pause · 8 Sek.</span></p>
+
+      <p>Einatmen… <span class="pause">Pause · 4 Sek.</span> Halten… <span class="pause">Pause · 7 Sek.</span> Ausatmen… <span class="pause">Pause · 8 Sek.</span></p>
+
+      <hr class="divider" />
+
+      <p>Spüren Sie jetzt Ihren Atem, ohne ihn zu steuern. Wie er von alleine kommt und geht. <span class="pause">Pause · 8 Sek.</span></p>
+
+      <p>Ihr Nervensystem hat in den letzten Minuten umgeschaltet. Nicht durch Willenskraft – einfach durch diesen Rhythmus. <span class="pause">Pause · 6 Sek.</span></p>
+
+      <p>Wenn Sie bereit sind: Atmen Sie einmal tief ein, strecken Sie sich leicht, und öffnen Sie die Augen.</p>
+
+    </div>
+    <p class="hint">Hinweis für Kursleitung: Die 7-Sekunden-Halte-Phase kann für manche Teilnehmende anfangs zu lang sein – es ist völlig okay, sie auf 4–5 Sekunden zu verkürzen und sich langsam zu steigern. Die Rückkehrtechnik (Gedanken benennen und loslassen) ist eine vereinfachte MBSR-Methode und besonders wirksam bei grübelnden, schmerzgeplagten Mustern.</p>
+  </div>
+</div>
+
+
+<footer>
+  Erstellt für den therapeutischen Einsatz · Beide Texte sind frei anpassbar
+</footer>
+
+</body>
+</html>
